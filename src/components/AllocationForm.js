@@ -5,20 +5,22 @@ const AllocationForm = (props) => {
     const { dispatch,remaining  } = useContext(AppContext);
 
     const [name, setName] = useState('');
-    const [cost, setCost] = useState('');
+    const [cost, setCost] = useState();
     const [action, setAction] = useState('');
-    const [error, setError] = useState('');
+    
+    const handleChange = (e) => {
+        console.log("changing")
+        const re = /^[0-9\b]+$/;       
+        if (e.target.value === '') {
+            setCost(0)
+        }       
+        if ( re.test(e.target.value)) {
+            setCost({value: e.target.value})
+        }    
+      };
     
     const submitEvent = () => {
 
-        console.log(parseInt(cost));
-        if(isNaN(parseInt(cost))) {
-            alert("Value must be be a number");
-            setCost(0);
-            setError('Value must be be a number')
-            return;
-        }
-        
         if(cost > remaining) {
             alert("The value cannot exceed remaining funds  £"+remaining);
             setCost("");
@@ -74,9 +76,8 @@ const AllocationForm = (props) => {
                         id='cost'
                         value={cost}
                         style={{ marginLeft: '2rem' , size: 10}}
-                        onChange={(event) => setCost(event.target.value)}>
-                        </input> <br/>
-                        <span>{error}</span>  <br/>
+                        onChange={handleChange}>
+                    </input>
 
                     <button className="btn btn-primary" onClick={submitEvent} style={{ marginLeft: '2rem' }}>
                         Save
