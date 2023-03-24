@@ -5,19 +5,18 @@ const AllocationForm = (props) => {
     const { dispatch,remaining  } = useContext(AppContext);
 
     const [name, setName] = useState('');
-    const [cost, setCost] = useState();
+    const [cost, setCost] = useState('');
     const [action, setAction] = useState('');
     
     const handleChange = (e) => {
-        console.log("changing")
-        const re = /^[0-9\b]+$/;       
+        const re = /^[0-9\b]+$/;
         if (e.target.value === '') {
-            setCost(0)
-        }       
-        if ( re.test(e.target.value)) {
-            setCost({value: e.target.value})
-        }    
-      };
+            setCost('')
+        }
+        if (re.test(e.target.value)) {
+            setCost(e.target.value)
+        }
+    };
     
     const submitEvent = () => {
 
@@ -69,13 +68,14 @@ const AllocationForm = (props) => {
                         <option defaultValue value="Add" name="Add">Add</option>
                 <option value="Reduce" name="Reduce">Reduce</option>
                   </select>
-
+     
+                  <span style={{ paddingLeft: '12px', marginLeft:'12px', marginTop: '6px', size: 16}} >£</span>
                     <input
                         required='required'
                         type='number'
                         id='cost'
                         value={cost}
-                        style={{ marginLeft: '2rem' , size: 10}}
+                        style={{ marginLeft: '3px' , size: 10}}
                         onChange={handleChange}>
                     </input>
 

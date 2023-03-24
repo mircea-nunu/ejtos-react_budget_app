@@ -11,6 +11,7 @@ import ExpenseList from './components/ExpenseList';
 import AllocationForm from './components/AllocationForm';
 
 import { AppProvider } from './context/AppContext';
+import CurrencySelect from './components/CurrencySelect';
 
 const App = () => {
     return (
@@ -29,6 +30,10 @@ const App = () => {
                     {/* Add ExpenseTotal component here under */}
                     <div className='col-sm'>
                         <ExpenseTotal />
+                    </div>
+                    {/* Add ExpenseTotal component here under */}
+                    <div className='col-sm'>
+                        <CurrencySelect />
                     </div>
                 <h3 className='mt-3'>Allocation</h3>
                     {/* Add ExpenseList component here under */}
