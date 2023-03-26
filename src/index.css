@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+#currency-label {
+    background-color: rgb(148, 235, 148);
+}
+
+#currency-label:hover {
+    color: white;
+}
+
+#currency-label #currency-select {
+    background-color: rgb(148, 235, 148);
+}
+
+#currency-label #currency-select:hover {
+    color: white;
+}
+
+#currency-label #currency-select > option {
+    background-color: rgb(148, 235, 148);
+}
+
+#currency-label #currency-select > option:hover {
+    color: white;
+}
