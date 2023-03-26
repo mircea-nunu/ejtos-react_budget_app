@@ -12,26 +12,17 @@ code {
     monospace;
 }
 
-#currency-label {
-    background-color: rgb(148, 235, 148);
-}
-
-#currency-label:hover {
-    color: white;
-}
-
-#currency-label #currency-select {
-    background-color: rgb(148, 235, 148);
-}
-
-#currency-label #currency-select:hover {
-    color: white;
-}
-
-#currency-label #currency-select > option {
-    background-color: rgb(148, 235, 148);
-}
-
-#currency-label #currency-select > option:hover {
-    color: white;
-}
+.dropdown-container {
+    text-align: left;
+    border: 1px solid #ccc;
+    position: relative;
+    border-radius: 5px;
+  }
+  
+  .dropdown-input {
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    user-select: none;
+  }
