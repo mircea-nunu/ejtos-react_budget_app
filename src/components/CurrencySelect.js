@@ -1,16 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 import Dropdown from './Dropdown';
 
 const CurrencySelect = () => {
     const {dispatch } = useContext(AppContext);
 
-    const [showMenu, setshowMenu] = useState(false);
-
-    useEffect(() => {
-        const handler = () => setshowMenu(false)
-        
-    })
     const options = [
         {value: "$" , label: "$ Dollar"},
         {value: "£" , label: "£ Pound"},

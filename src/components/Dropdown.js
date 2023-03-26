@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+
+import "./Dropdown.css";
 
 const Icon = () => {
     return (
@@ -8,26 +10,53 @@ const Icon = () => {
     );
   };
 
+
 const Dropdown = ({ placeHolder, options }) => {
     const getDisplay = () => {
       return placeHolder;
     };
+
+    const [showMenu, setShowMenu] = useState(false);
+    // const inputRef = useRef();
   
+
+  useEffect(() => {
+    const handler = () => setShowMenu(false);
+  
+
+      window.addEventListener("click", handler);
+      return () => {
+          window.removeEventListener("click", handler);
+      };
+  });
+  
+  const handleInputClick = (e) => {
+    e.stopPropagation();
+    setShowMenu(!showMenu);
+  };
+
     return (
-      <div className="dropdown-container">
-        <div className="dropdown-input">
+        <div className="dropdown-container">
+        <div onClick={handleInputClick} className="dropdown-input">
           <div className="dropdown-selected-value">{getDisplay()}</div>
-            <div className="dropdown-menu">
-                {options.map((option) =>(
-                    <div key={option.value} className="dropdown-item">
-                        {option.item}
-                    </div>    
-                ))}
-            </div>
+          <div className="dropdown-tools">
             <div className="dropdown-tool">
-                <Icon/>
+              <Icon />
             </div>
+          </div>
         </div>
+        {showMenu && (
+          <div className="dropdown-menu">
+            {options.map((option) => (
+              <div
+                key={option.value}
+                className="dropdown-item"
+              >
+                {option.label}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     );
   };

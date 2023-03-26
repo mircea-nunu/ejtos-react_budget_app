@@ -32,9 +32,7 @@ const App = () => {
                         <ExpenseTotal />
                     </div>
                     {/* Add ExpenseTotal component here under */}
-                    <div className='col-sm'>
                         <CurrencySelect />
-                    </div>
                 <h3 className='mt-3'>Allocation</h3>
                     {/* Add ExpenseList component here under */}
                     <div className='row '>
