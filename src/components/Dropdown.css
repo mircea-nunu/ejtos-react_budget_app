@@ -1,0 +1,33 @@
+.drop-container {
+    color: black;
+    position: relative;
+    border-spacing: 12px;
+    background-color: rgb(106, 207, 106);
+}
+
+.drop-container:hover * {
+    color: white;
+    font-size: 110%;
+}
+
+.currency-label .currency-select {
+    border: none;
+    background-color: rgb(106, 207, 106);
+}
+
+.currency-label .currency-select .option-select{
+    color: black;
+    border: none;
+    background-color: initial
+}
+
+.currency-label .currency-select .option-select:hover{
+    color: black;
+    border: none;
+    background-color: initial;
+    font-size: 100%;
+}
+
+.budget {
+    display: inline-block;
+}

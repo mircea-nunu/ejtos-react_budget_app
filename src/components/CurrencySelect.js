@@ -1,9 +1,10 @@
 import React, { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 import Dropdown from './Dropdown';
+import "./Dropdown.css";
 
 const CurrencySelect = () => {
-    const {dispatch } = useContext(AppContext);
+    const {dispatch, currency } = useContext(AppContext);
 
     const options = [
         {value: "$" , label: "$ Dollar"},
@@ -23,8 +24,11 @@ const CurrencySelect = () => {
     }
 
   return (
+      <div className="alert alert-success drop-container">
         <Dropdown placeHolder="Currency (" options={options} 
-        changeCurrency={changeCurrency}/>
+        changeCurrency={changeCurrency}
+        currency={currency}/>
+    </div>
     );
 
 };

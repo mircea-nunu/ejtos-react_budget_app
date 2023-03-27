@@ -1,20 +1,22 @@
 import React from "react";
 
-const Dropdown = ({ placeHolder, options, changeCurrency }) => {
+import "./Dropdown.css";
+
+const Dropdown = ({ placeHolder, options, changeCurrency, currency }) => {
     const getDisplay = () => {
       return placeHolder;
     };
   
     return (
         <label
-            className="alert alert-success" 
-            htmlFor="currency-select" id="currency-label"> {getDisplay()}
+            htmlFor="currency-select" className="currency-label"> {getDisplay()}
             <select
-                className="alert alert-success"
-                name="Currency" id="currency-select" 
-                onChange={event=>changeCurrency(event.target)}>
+                className="currency-select" 
+                onChange={event=>changeCurrency(event.target)}
+                defaultValue={currency}
+                >
                 {options.map((option) => (
-                <option 
+                <option className ="option-select"
                     key={option.value}
                     value={option.value}>{option.label}
                 </option>
