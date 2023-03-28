@@ -25,10 +25,11 @@ const CurrencySelect = () => {
 
   return (
       <div className="alert alert-success drop-container">
-        <Dropdown placeHolder="Currency (" options={options} 
-        changeCurrency={changeCurrency}
-        currency={currency}/>
-    </div>
+        <Dropdown 
+            options={options} 
+            changeCurrency={changeCurrency}
+            currency={currency}/>
+        </div>
     );
 
 };

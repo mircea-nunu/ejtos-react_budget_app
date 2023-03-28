@@ -8,20 +8,28 @@
 .drop-container:hover * {
     color: white;
     font-size: 110%;
+    
 }
 
-.currency-label .currency-select {
+.select-div {
+    width: 60%;
+    overflow:hidden;
+}
+.currency-select {
+    width: 60%;
     border: none;
     background-color: rgb(106, 207, 106);
 }
 
-.currency-label .currency-select .option-select{
+.currency-select .currency-option {
+    width: 150%;
     color: black;
     border: none;
     background-color: initial
 }
 
-.currency-label .currency-select .option-select:hover{
+.currency-select .currency-option:hover {
+    width: 150%;
     color: black;
     border: none;
     background-color: initial;
