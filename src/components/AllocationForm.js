@@ -9,18 +9,18 @@ const AllocationForm = (props) => {
     const [action, setAction] = useState('');
     
     const handleChange = (e) => {
+        let costValue =  e.target.value;
         const re = /^[0-9\b]+$/;
-        if (e.target.value === '') {
-            setCost('')
+        if (costValue === '' || re.test(costValue)) {
+            setCost(costValue)
         }
-        if (re.test(e.target.value)) {
-            setCost(e.target.value)
-        }
+        
     };
-    
+    console.log(cost)
+
     const submitEvent = () => {
 
-        if(cost > remaining) {
+        if(parseInt(cost) > remaining && action === "Add") {
             alert("The value cannot exceed remaining funds " + currency + remaining);
             setCost("");
             return;
@@ -30,6 +30,7 @@ const AllocationForm = (props) => {
             name: name,
             cost: parseInt(cost),
         };
+
         if(action === "Reduce") {
             dispatch({
                 type: 'RED_EXPENSE',

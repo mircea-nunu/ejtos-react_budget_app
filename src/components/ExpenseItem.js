@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { TiDelete } from 'react-icons/ti';
-import {AiFillPlusCircle } from 'react-icons/ai'
+import {AiFillMinusCircle, AiFillPlusCircle } from 'react-icons/ai'
 import { AppContext } from '../context/AppContext';
 
 const ExpenseItem = (props) => {
@@ -30,7 +30,7 @@ const ExpenseItem = (props) => {
     const decreaseAllocation = (name) => {
         const expense = {
             name: name,
-            cost: 10,
+            cost: -10,
         };
 
         
@@ -49,6 +49,11 @@ const ExpenseItem = (props) => {
             className="plus-minus-button"
             onClick={event=> increaseAllocation(props.name)}>
             <AiFillPlusCircle size='2em' color="green"></AiFillPlusCircle>
+        </button></td>
+        <td><button 
+            className="plus-minus-button"
+            onClick={event=> decreaseAllocation(props.name)}>
+            <AiFillMinusCircle size='2em' color="red"></AiFillMinusCircle>
         </button></td>
         <td><TiDelete size='1.5em' onClick={handleDeleteExpense}></TiDelete></td>
         </tr>
