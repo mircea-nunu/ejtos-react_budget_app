@@ -51,21 +51,21 @@ const Budget = () => {
 
     return (
         <div className='alert alert-secondary'>
-            <p className="budget">Budget: {currency}
-            <input
+            <label for="budget-input" className="budget-label">Budget: {currency}</label>
+            <span className="budget-span"><input
+                id='budget-input'
+                className="budget-input"
                 autoFocus
                 required='required'
                 type='number'
                 step='10'
                 max='20000'
-                id='budget'
                 value={budget}
                 style={{ marginLeft: '3px' , size: 10}}
                 onChange={handleChange}
                 onFocus={(e) => handleFocus(e, "focused")}
                 onBlur={(e) => handleFocus(e,"Unfocused")}>
-            </input>
-            </p>
+            </input></span>
         </div>
     );
 };

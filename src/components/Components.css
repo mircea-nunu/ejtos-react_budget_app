@@ -37,3 +37,17 @@
     background: transparent;
     background-color: white;
 }
+
+.budget-label {
+    float: left;
+}
+
+.budget-span {
+    display: block;
+    overflow: hidden;
+    padding: 0px 4px 0px 6px;
+}
+
+.budget-input {
+    width: 100%;
+}
