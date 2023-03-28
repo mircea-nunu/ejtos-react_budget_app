@@ -31,3 +31,9 @@
 .budget {
     display: inline-block;
 }
+
+.plus-minus-button {
+    border: hidden;
+    background: transparent;
+    background-color: white;
+}

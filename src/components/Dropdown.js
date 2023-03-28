@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./Dropdown.css";
+import "./Components.css";
 
 const Dropdown = ({ placeHolder, options, changeCurrency, currency }) => {
     const getDisplay = () => {
